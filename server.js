@@ -8,7 +8,11 @@ const fs = require("fs");
 //Enable CORS
 constants.APP.use(cors({ credentials: true, origin: true }));
 constants.APP.use(function (req, res, next) {
-  var allowedOrigins = ["http://localhost:1300", "http://bizlypos.com:1300"];
+  var allowedOrigins = [
+    "http://localhost:1300",
+    "http://bizlypos.com:1300",
+    "http://localhost:8100",
+  ];
   var origin = req.headers.origin;
   if (allowedOrigins.indexOf(origin) > -1) {
     res.setHeader("Access-Control-Allow-Origin", origin);
